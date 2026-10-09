@@ -1,0 +1,59 @@
+import React from 'react'
+import { SectionTitle } from './ui/SectionTitle'
+import { ParallaxImage } from './ui/ParallaxImage'
+import { Reveal } from './ui/Reveal'
+import { projectsData } from '../data/projects'
+import { cn } from '../lib/utils'
+
+export const Projects: React.FC = () => {
+  return (
+    <section id="projects" className="py-20 md:py-28 bg-[#ffffff]">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
+          {/* Left: Sticky Section Title */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
+            <SectionTitle title="PROJECTS" />
+          </div>
+
+          {/* Right: Stacked Projects */}
+          <div className="lg:col-span-8 flex flex-col gap-20 sm:gap-24 md:gap-32">
+            {projectsData.map((project) => (
+              <div key={project.id} className="relative group">
+                {/* Large Parallax Project Image */}
+                <div className="w-full h-[360px] sm:h-[480px] md:h-[620px] rounded-[2px] overflow-hidden">
+                  <ParallaxImage
+                    src={project.image}
+                    alt={project.title}
+                    offset={55}
+                    className="w-full h-full"
+                  />
+                </div>
+
+                {/* Overlapping Frosted Glass Info Card */}
+                <Reveal
+                  delay={0.2}
+                  direction={project.align === 'left' ? 'left' : 'right'}
+                  className={cn(
+                    'mt-4 md:mt-0 md:absolute md:bottom-8 z-20 w-full md:w-[350px] lg:w-[380px]',
+                    'bg-[#ffffff]/90 backdrop-blur-md p-6 sm:p-8 border border-[#ffffff]/60 shadow-xl rounded-[2px]',
+                    project.align === 'left' ? 'md:left-8' : 'md:right-8'
+                  )}
+                >
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111111] mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-[12px] font-medium text-[#777777] mb-3">
+                    {project.meta}
+                  </p>
+                  <p className="text-[13px] leading-[1.7] text-[#444444]">
+                    {project.description}
+                  </p>
+                </Reveal>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

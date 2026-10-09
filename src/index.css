@@ -1,103 +1,15 @@
-:root {
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
-  --color-bg: #ffffff;
-  --color-bg-alt: #f7f7f8;
-  --color-bg-dark: #121316;
-  --color-text-dark: #111111;
-  --color-text-muted: #555865;
-  --color-text-subtle: #8e92a2;
-  --color-text-light: #f3f4f6;
-  --color-border: #e6e7ea;
-  --color-border-dark: #27282e;
-  --color-input-bg: #f4f5f7;
+@import "tailwindcss";
 
-  --container-max: 1440px;
-  --container-padding: clamp(20px, 4vw, 56px);
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
 
-  color-scheme: light;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-main);
-  background-color: var(--color-bg);
-  color: var(--color-text-dark);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background-color: var(--color-bg);
-  color: var(--color-text-dark);
-  line-height: 1.5;
-}
-
-#root {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Typography elements */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-main);
-  font-weight: 800;
-  color: var(--color-text-dark);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-p {
-  color: var(--color-text-muted);
-  line-height: 1.65;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity 0.2s ease, color 0.2s ease;
-}
-
-button {
-  font-family: inherit;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* Reusable Container */
-.woodland-container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #999999;
+  body {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Inter Tight Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
