@@ -44,6 +44,8 @@ const FloatingImage: React.FC<FloatingImageProps> = ({
       <img
         src={image}
         alt={title}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
       />
     </motion.div>

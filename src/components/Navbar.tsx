@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'Projects', href: '#projects' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Location', href: '#location' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -37,15 +38,14 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 w-full z-50 bg-[#ffffff]/95 backdrop-blur-md border-b border-black/[0.04]"
     >
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14 h-20 md:h-[88px] flex items-center justify-between">
+      <div className="w-full px-6 sm:px-10 md:px-14 lg:px-16 h-20 md:h-[84px] flex items-center justify-between">
         {/* Brand */}
-        <a href="#" className="flex flex-col group">
-          <span className="text-xl md:text-2xl font-black uppercase tracking-tight text-[#111111] leading-none transition-opacity group-hover:opacity-80">
-            WOODLAND
-          </span>
-          <span className="text-[11px] text-[#666666] tracking-wide mt-1">
-            Spaces like home since 2010
-          </span>
+        <a href="#" className="flex items-center group">
+          <img
+            src="/wonderglass-logo.png"
+            alt="WonderGlass Technologies"
+            className="h-8 md:h-9 w-auto object-contain transition-opacity group-hover:opacity-80"
+          />
         </a>
 
         {/* Desktop Nav Links */}

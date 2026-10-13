@@ -8,19 +8,19 @@ export const reviewsData: ReviewItem[] = [
   {
     id: 'review-1',
     quote:
-      'Working with Woodland Architects was a blessing for our home. We wanted a space that felt modern but still warm and inviting, and they absolutely nailed it. We highly recommend them for architecture and design projects.',
-    author: 'Sarah & David Miller',
+      'Working with WonderGlass was a game-changer for our Palm Jumeirah villa. The switchable smart glass gives us instant privacy with effortless modern style, and the motorized blinds protect us perfectly from the afternoon sun. Truly exceptional engineering.',
+    author: 'Tariq Al-Mansouri • Palm Jumeirah Resident',
   },
   {
     id: 'review-2',
     quote:
-      'From conceptual sketches through the final handover, Woodland brought unprecedented clarity and spatial mastery. The natural light transitions throughout the day are pure art.',
-    author: 'Marcus Vance',
+      'From initial technical consultation through project commissioning at our Abu Dhabi corporate offices, WonderGlass delivered world-class precision. The Vertilux guillotine system operates with whisper-quiet smoothness.',
+    author: 'Eng. Kareem Haddad • Project Director, Abu Dhabi',
   },
   {
     id: 'review-3',
     quote:
-      'Their dedication to enduring materials and sustainable layout planning turned our vision into our forever sanctuary. A world-class studio in every dimension.',
-    author: 'Elena Rostova',
+      'Their 5-year guarantee and dedicated UAE technical support gave our design studio total confidence. The retractable glass solarium allows our clients to enjoy outdoor living in the UAE year-round.',
+    author: 'Sophia Sterling • Principal Architect, Dubai',
   },
 ]

@@ -49,9 +49,9 @@ export const Contact: React.FC = () => {
 
             <Reveal delay={0.1} direction="up">
               <p className="text-[13.5px] md:text-[14px] leading-[1.75] text-[#555555] mb-10 max-w-[520px]">
-                If you're someone who's looking to bring a space to life, share
-                a few details to help me reach out to you so we can discuss how
-                to bring your vision to life.
+                If you are planning a modern architectural project, luxury villa,
+                or commercial space in the UAE, share your requirements to connect
+                with our engineering specialists for a bespoke glass and shading consultation.
               </p>
             </Reveal>
 
@@ -132,8 +132,8 @@ export const Contact: React.FC = () => {
           {/* Right Column: Tall Architecture Image with Parallax & Reveal */}
           <div className="lg:col-span-6 w-full h-[450px] sm:h-[550px] lg:h-[640px] rounded-[2px] overflow-hidden">
             <ParallaxImage
-              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
-              alt="Woodland Architecture Curved Minimalist Facade"
+              src="https://wonderglass.ae/wp-content/uploads/2025/06/Mask-group-5-1300x887-1.png"
+              alt="WonderGlass Technologies Architectural Glass System"
               offset={50}
               className="w-full h-full"
             />

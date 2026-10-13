@@ -1,3 +1,16 @@
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+dist-ssr/
+
 # Logs
 logs
 *.log
@@ -7,16 +20,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Scratch & test outputs
+scratch_test_*
+*.tmp
+*.temp
 
-# Editor directories and files
+# OS & Editor files
+.DS_Store
+Thumbs.db
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj

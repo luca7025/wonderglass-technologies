@@ -23,6 +23,7 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
   className,
   imageClassName,
   offset = 60,
+  priority = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const shouldReduceMotion = useReducedMotion()
@@ -54,6 +55,8 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
         <motion.img
           src={src}
           alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
           style={{ y, scale: shouldReduceMotion ? 1 : 1.15 }}
           className={cn(
             'w-full h-full object-cover origin-center',

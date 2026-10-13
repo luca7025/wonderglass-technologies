@@ -9,58 +9,58 @@ export interface ServiceItem {
 export const servicesData: ServiceItem[] = [
   {
     number: '01',
-    title: 'Architecture',
+    title: 'Smart Glass & Film',
     description:
-      'We design buildings that are purposeful, enduring, and deeply connected to their surroundings.',
+      'Switchable Smart Glass by WonderGlass Technologies redefines privacy in seconds. One touch changes transparent to opaque, elevating your space with clean design and advanced smart glass technology.',
     bullets: [
-      'Concept Design',
-      'Architectural Planning',
-      '3D Visualization & Modeling',
-      'Construction Documentation',
+      'PDLC Smart Switchable Film',
+      'Instant Privacy on Demand',
+      'Solar Heat & UV Rejection',
+      'Turnkey Installation in UAE',
     ],
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'https://wonderglass.ae/wp-content/uploads/2025/06/Mask-group-4-1300x887-1.png',
   },
   {
     number: '02',
-    title: 'Interior Design',
+    title: 'Vertilux Guillotine Glass',
     description:
-      'Beyond surface-level styling, we craft interiors that feel as good as they look.',
+      'Vertilux by WonderGlass Technologies delivers an Automatic Vertical Sliding Glass System in Dubai, offering smooth motorized vertical movement, unobstructed views, and flexible space control.',
     bullets: [
-      'Spatial Identity',
-      'Material & Finish Selection',
-      'Furniture & Lighting Design',
-      'Detail Development',
+      'Motorized Vertical Sliding',
+      'Acoustic & Weather Protection',
+      'Built-in Glass Balustrade',
+      'Commercial & Villa Integration',
     ],
     image:
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+      'https://wonderglass.ae/wp-content/uploads/2025/06/Mask-group-6-1300x887-1.png',
   },
   {
     number: '03',
-    title: 'Layout Planning',
+    title: 'SkyFold & Skylights',
     description:
-      'We organize environments around people, movement, and use, creating clarity, comfort, and adaptability.',
+      'Skyfold Glass Solutions offer a smart way to enclose and open spaces effortlessly. This automatic movable glassroom and retractable skylight system allows instant control over openness, light, and protection.',
     bullets: [
-      'Functional Zoning',
-      'Human-Centered Design',
-      'Circulation Strategy',
-      'Flexibility & Future Use',
+      'Retractable Glass Sunrooms',
+      'Motorized Skylight Systems',
+      'Year-Round Climate Control',
+      'Automated Weather Sensors',
     ],
     image:
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+      'https://wonderglass.ae/wp-content/uploads/2026/02/Retractable-Fabric-Roof-in-UAE.jpg',
   },
   {
     number: '04',
-    title: 'Project Management',
+    title: 'Z-Lock & Motorised Shading',
     description:
-      'We ensure your vision is delivered on time, on budget, and to the highest standards.',
+      'Z-Lock by WonderGlass Technologies is a premium Motorised Outdoor Blinds system in Dubai, UAE designed to block extreme sunlight, wind, dust, and rain while enhancing comfort in outdoor living spaces.',
     bullets: [
-      'Concept Design',
-      'Stakeholder Coordination',
-      'Quality Control',
-      'Budget & Timeline Tracking',
+      'Z-Lock Windproof Track System',
+      'SkyReel Retractable Shading',
+      'Somfy & Smart Home Sync',
+      'High Thermal Heat Insulation',
     ],
     image:
-      'https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=80',
+      'https://wonderglass.ae/wp-content/uploads/2026/02/Motorised-Outdoor-Blinds-in-Dubai-UAE.jpg',
   },
 ]
