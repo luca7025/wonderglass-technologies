@@ -61,34 +61,34 @@ const StatCounter: React.FC<{
 
 export const Stats: React.FC = () => {
   const statsRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(statsRef, { once: true, margin: '-50px' })
+  const isInView = useInView(statsRef, { once: true, margin: '0px 0px -20px 0px' })
 
   return (
-    <section className="py-20 md:py-28 bg-[#ffffff]">
+    <section className="py-16 md:py-28 bg-[#ffffff]">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14">
         {/* Top Kicker Label */}
         <Reveal direction="up">
-          <span className="block text-[11px] md:text-xs font-bold tracking-[0.14em] uppercase text-[#111111] mb-10 md:mb-14">
-            BY THE NUMBERS
+          <span className="block text-[11px] md:text-xs font-bold tracking-[0.16em] uppercase text-[#111111] mb-8 md:mb-14">
+            PROVEN TRACK RECORD • BY THE NUMBERS
           </span>
         </Reveal>
 
         {/* 3 CountUp Stats */}
         <div
           ref={statsRef}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-16 pb-20 md:pb-28"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 md:gap-16 pb-16 md:pb-28"
         >
           {STATS_DATA.map((item, idx) => (
-            <Reveal key={item.label} delay={idx * 0.15} direction="up">
-              <div className="flex flex-col">
-                <span className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#111111] leading-none mb-3">
+            <Reveal key={item.label} delay={idx * 0.12} direction="up">
+              <div className="flex flex-col p-6 sm:p-0 bg-[#f9fafb] sm:bg-transparent rounded-[3px] border border-[#e5e7eb] sm:border-0">
+                <span className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#111111] leading-none mb-2 sm:mb-3">
                   <StatCounter
                     end={item.end}
                     suffix={item.suffix}
                     isInView={isInView}
                   />
                 </span>
-                <span className="text-[13px] md:text-[14px] text-[#666666]">
+                <span className="text-[13px] md:text-[14px] font-medium text-[#666666] capitalize">
                   {item.label}
                 </span>
               </div>
@@ -99,38 +99,48 @@ export const Stats: React.FC = () => {
         {/* Trusted Partners */}
         <div className="text-center pt-8 border-t border-[#f0f0f0]">
           <Reveal direction="up">
-            <span className="block text-[11px] md:text-xs font-bold tracking-[0.14em] uppercase text-[#111111] mb-10">
+            <span className="block text-[10px] sm:text-[11px] md:text-xs font-bold tracking-[0.16em] uppercase text-[#888888] mb-8">
               TRUSTED BY UAE INDUSTRY LEADERS
             </span>
           </Reveal>
 
-          <Reveal delay={0.2} direction="up">
-            <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 md:gap-18 opacity-80">
-              <img
-                src="https://wonderglass.ae/wp-content/uploads/2025/08/adnoc.png"
-                alt="ADNOC"
-                className="h-8 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-              />
-              <img
-                src="https://wonderglass.ae/wp-content/uploads/2025/08/Adnec.png"
-                alt="ADNEC"
-                className="h-8 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-              />
-              <img
-                src="https://wonderglass.ae/wp-content/uploads/2025/08/beeh.png"
-                alt="BEEAH"
-                className="h-8 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-              />
-              <img
-                src="https://wonderglass.ae/wp-content/uploads/2025/08/Dubai-Hells-Estate.png"
-                alt="Dubai Hills Estate"
-                className="h-8 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-              />
-              <img
-                src="https://wonderglass.ae/wp-content/uploads/2025/08/danoop-Properties.png"
-                alt="Danube Properties"
-                className="h-8 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-              />
+          <Reveal delay={0.15} direction="up">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-6 sm:gap-14 md:gap-18 opacity-85">
+              <div className="flex items-center justify-center p-3">
+                <img
+                  src="https://wonderglass.ae/wp-content/uploads/2025/08/adnoc.png"
+                  alt="ADNOC"
+                  className="h-7 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
+              <div className="flex items-center justify-center p-3">
+                <img
+                  src="https://wonderglass.ae/wp-content/uploads/2025/08/Adnec.png"
+                  alt="ADNEC"
+                  className="h-7 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
+              <div className="flex items-center justify-center p-3">
+                <img
+                  src="https://wonderglass.ae/wp-content/uploads/2025/08/beeh.png"
+                  alt="BEEAH"
+                  className="h-7 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
+              <div className="flex items-center justify-center p-3">
+                <img
+                  src="https://wonderglass.ae/wp-content/uploads/2025/08/Dubai-Hells-Estate.png"
+                  alt="Dubai Hills Estate"
+                  className="h-7 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
+              <div className="col-span-2 sm:col-span-1 flex items-center justify-center p-3">
+                <img
+                  src="https://wonderglass.ae/wp-content/uploads/2025/08/danoop-Properties.png"
+                  alt="Danube Properties"
+                  className="h-7 sm:h-9 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
             </div>
           </Reveal>
         </div>
@@ -138,3 +148,4 @@ export const Stats: React.FC = () => {
     </section>
   )
 }
+

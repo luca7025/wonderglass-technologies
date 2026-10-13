@@ -48,11 +48,37 @@ export const Contact: React.FC = () => {
             </Reveal>
 
             <Reveal delay={0.1} direction="up">
-              <p className="text-[13.5px] md:text-[14px] leading-[1.75] text-[#555555] mb-10 max-w-[520px]">
+              <p className="text-[13.5px] md:text-[14px] leading-[1.75] text-[#555555] mb-6 max-w-[520px]">
                 If you are planning a modern architectural project, luxury villa,
                 or commercial space in the UAE, share your requirements to connect
                 with our engineering specialists for a bespoke glass and shading consultation.
               </p>
+            </Reveal>
+
+            {/* Quick Mobile Contact Badges */}
+            <Reveal delay={0.12} direction="up">
+              <div className="flex flex-wrap items-center gap-2 mb-8">
+                <a
+                  href="tel:+971567233399"
+                  className="px-3.5 py-2 bg-[#f4f5f7] hover:bg-[#e5e7eb] text-[#111111] text-[12px] font-semibold rounded-[2px] transition-colors flex items-center gap-1.5"
+                >
+                  <span>📞 Call: +971 56 723 3399</span>
+                </a>
+                <a
+                  href="https://wa.me/971567233399"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-3.5 py-2 bg-[#f4f5f7] hover:bg-[#e5e7eb] text-[#111111] text-[12px] font-semibold rounded-[2px] transition-colors flex items-center gap-1.5"
+                >
+                  <span>💬 WhatsApp</span>
+                </a>
+                <a
+                  href="mailto:info@wonderglass.ae"
+                  className="px-3.5 py-2 bg-[#f4f5f7] hover:bg-[#e5e7eb] text-[#111111] text-[12px] font-semibold rounded-[2px] transition-colors flex items-center gap-1.5"
+                >
+                  <span>✉️ Email</span>
+                </a>
+              </div>
             </Reveal>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -66,7 +92,7 @@ export const Contact: React.FC = () => {
                     type="text"
                     {...register('fullName')}
                     placeholder="John Doe"
-                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all"
+                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-base sm:text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all"
                   />
                   {errors.fullName && (
                     <span className="text-xs text-red-600 mt-0.5">
@@ -86,7 +112,7 @@ export const Contact: React.FC = () => {
                     type="email"
                     {...register('email')}
                     placeholder="john@example.com"
-                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all"
+                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-base sm:text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all"
                   />
                   {errors.email && (
                     <span className="text-xs text-red-600 mt-0.5">
@@ -105,8 +131,8 @@ export const Contact: React.FC = () => {
                   <textarea
                     rows={4}
                     {...register('projectDescription')}
-                    placeholder="Example Text"
-                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all resize-y"
+                    placeholder="Describe your architectural or glazing requirements..."
+                    className="w-full bg-[#f4f5f7] px-4 py-3.5 rounded-[2px] text-base sm:text-[14px] text-[#111111] border border-transparent focus:outline-none focus:border-[#111111] focus:bg-white transition-all resize-y"
                   />
                   {errors.projectDescription && (
                     <span className="text-xs text-red-600 mt-0.5">
@@ -121,9 +147,9 @@ export const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-6 bg-[#111111] text-[#ffffff] text-[13px] font-bold tracking-[0.08em] uppercase rounded-[2px] hover:bg-[#282828] active:scale-[0.99] transition-all disabled:opacity-50"
+                  className="w-full py-4 px-6 bg-[#111111] text-[#ffffff] text-[13px] font-bold tracking-[0.08em] uppercase rounded-[2px] hover:bg-[#282828] active:scale-[0.98] transition-all disabled:opacity-50 cursor-pointer"
                 >
-                  {submitted ? 'MESSAGE SENT ✓' : isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+                  {submitted ? 'MESSAGE SENT ✓' : isSubmitting ? 'SUBMITTING...' : 'SUBMIT INQUIRY'}
                 </button>
               </Reveal>
             </form>

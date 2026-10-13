@@ -102,26 +102,27 @@ export const Location: React.FC = () => {
           </Reveal>
         </div>
 
-        {/* Location Tabs / Pill Switcher */}
-        <div className="flex items-center gap-3 mb-8">
+        {/* Location Tabs / Segmented Switcher */}
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3 mb-8">
           {LOCATIONS.map((loc) => {
             const isActive = loc.id === activeLocationId
             return (
-              <button
+              <motion.button
                 key={loc.id}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => setActiveLocationId(loc.id)}
-                className={`relative px-6 py-3 rounded-[2px] text-[13px] font-bold tracking-[0.05em] uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+                className={`relative px-4 sm:px-6 py-3.5 rounded-[2px] text-[12.5px] sm:text-[13px] font-bold tracking-[0.05em] uppercase transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
                   isActive
                     ? 'bg-[#111111] text-[#ffffff] shadow-sm'
                     : 'bg-[#ffffff] text-[#555555] hover:text-[#111111] hover:bg-[#f3f4f6] border border-[#e5e7eb]'
                 }`}
               >
-                <Building2 size={16} className={isActive ? 'text-[#ffffff]' : 'text-[#777777]'} />
-                <span>{loc.city} Hub</span>
+                <Building2 size={15} className={isActive ? 'text-[#ffffff]' : 'text-[#777777]'} />
+                <span>{loc.city}</span>
                 {isActive && (
-                  <span className="ml-1 inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 )}
-              </button>
+              </motion.button>
             )
           })}
         </div>
@@ -257,7 +258,7 @@ export const Location: React.FC = () => {
           </div>
 
           {/* Right Column: Interactive Map Embed (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col min-h-[460px] sm:min-h-[540px] lg:min-h-[620px] bg-[#ffffff] border border-[#e5e7eb] rounded-[3px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] relative">
+          <div className="lg:col-span-7 flex flex-col min-h-[400px] sm:min-h-[540px] lg:min-h-[620px] bg-[#ffffff] border border-[#e5e7eb] rounded-[3px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] relative">
             {/* Top Bar for Map */}
             <div className="px-5 py-3.5 bg-[#ffffff] border-b border-[#e5e7eb] flex items-center justify-between z-10">
               <div className="flex items-center gap-2.5">
@@ -287,7 +288,7 @@ export const Location: React.FC = () => {
               <iframe
                 title={`WonderGlass ${activeLocation.city} Map`}
                 src={activeLocation.mapEmbedUrl}
-                className="w-full h-full min-h-[420px] sm:min-h-[480px] lg:min-h-[560px] border-0"
+                className="w-full h-full min-h-[360px] sm:min-h-[480px] lg:min-h-[560px] border-0"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"

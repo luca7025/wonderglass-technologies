@@ -108,7 +108,7 @@ export const ChatBot: React.FC = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans">
       {/* Floating Toggle Button */}
       <motion.button
         whileHover={{ scale: 1.05 }}
@@ -135,7 +135,7 @@ export const ChatBot: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="absolute bottom-16 right-0 w-[92vw] sm:w-[420px] max-h-[640px] h-[80vh] bg-white rounded-2xl shadow-2xl border border-neutral-200/80 flex flex-col overflow-hidden text-[#111111]"
+            className="fixed inset-x-3 bottom-20 top-16 sm:static sm:absolute sm:inset-auto sm:bottom-16 sm:right-0 sm:w-[400px] sm:h-[580px] sm:max-h-[640px] bg-white rounded-2xl shadow-2xl border border-neutral-200/80 flex flex-col overflow-hidden text-[#111111]"
           >
             {/* Header */}
             <div className="px-5 py-4 bg-neutral-900 text-white flex items-center justify-between border-b border-neutral-800">
@@ -261,7 +261,7 @@ export const ChatBot: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about architectural glass..."
                 disabled={isLoading}
-                className="flex-1 text-sm bg-neutral-100/80 border border-neutral-200/60 rounded-xl px-3.5 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-900 focus:bg-white transition-all disabled:opacity-50"
+                className="flex-1 text-base sm:text-sm bg-neutral-100/80 border border-neutral-200/60 rounded-xl px-3.5 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-900 focus:bg-white transition-all disabled:opacity-50"
               />
 
               <button
