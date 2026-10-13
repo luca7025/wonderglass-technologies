@@ -18,14 +18,14 @@ interface DisplayMessage extends ChatMessage {
 const INITIAL_MESSAGE: DisplayMessage = {
   id: 'init-1',
   role: 'assistant',
-  content: `Hello! I am Wonderglass AI, your architectural glass specialist. How can I assist you with your project, glazing specifications, or custom installations today?`,
+  content: `Hello! I am WonderGlass AI. Ask me about smart glass, Vertilux guillotine glass, SkyFold skylights, motorised shading, or visiting our Abu Dhabi and Dubai showrooms.`,
   timestamp: 'Just now',
 }
 
 const SUGGESTIONS = [
-  'What bespoke glass solutions do you offer?',
-  'How do minimal frame sliding doors perform thermally?',
-  'Tell me about structural glass skylights & floors.',
+  'How does PDLC smart glass work?',
+  'What is Vertilux guillotine glass?',
+  'Where is your showroom and when is it open?',
 ]
 
 let messageCounter = 0
@@ -69,12 +69,12 @@ export const ChatBot: React.FC = () => {
     setIsLoading(true)
 
     try {
-      const historyForApi: ChatMessage[] = nextMessages.map((m) => ({
-        role: m.role,
-        content: m.content,
-      }))
+      // History already ends with the new user message; skip local error bubbles.
+      const historyForApi: ChatMessage[] = nextMessages
+        .filter((m) => !m.id.startsWith('err'))
+        .map((m) => ({ role: m.role, content: m.content }))
 
-      const replyText = await sendChatMessage(text, historyForApi)
+      const replyText = await sendChatMessage(historyForApi)
 
       const assistantMsg: DisplayMessage = {
         id: createMessageId('ai'),
@@ -88,7 +88,7 @@ export const ChatBot: React.FC = () => {
       const errorMsg: DisplayMessage = {
         id: createMessageId('err'),
         role: 'assistant',
-        content: `Error connecting to AI Gateway: ${err.message || 'Please ensure OmniRoute is running on port 20128.'}`,
+        content: `Sorry, the assistant is unavailable right now (${err.message || 'network error'}). Please try again or use the contact form.`,
         timestamp: getFormattedTime(),
       }
       setMessages((prev) => [...prev, errorMsg])

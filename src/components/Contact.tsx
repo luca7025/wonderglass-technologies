@@ -27,9 +27,20 @@ export const Contact: React.FC = () => {
     resolver: zodResolver(contactSchema),
   })
 
-  const onSubmit = async (_data: ContactFormData) => {
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 600))
+  const [submitError, setSubmitError] = useState(false)
+
+  // Netlify Forms; the hidden "contact" form in index.html registers the fields at deploy.
+  const onSubmit = async (data: ContactFormData) => {
+    setSubmitError(false)
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'contact', ...data }).toString(),
+    }).catch(() => null)
+    if (!res?.ok) {
+      setSubmitError(true)
+      return
+    }
     setSubmitted(true)
     reset()
     setTimeout(() => setSubmitted(false), 5000)
@@ -151,6 +162,11 @@ export const Contact: React.FC = () => {
                 >
                   {submitted ? 'MESSAGE SENT ✓' : isSubmitting ? 'SUBMITTING...' : 'SUBMIT INQUIRY'}
                 </button>
+                {submitError && (
+                  <p role="alert" className="mt-3 text-[12px] text-red-600">
+                    Could not send your inquiry. Please try again or call us directly.
+                  </p>
+                )}
               </Reveal>
             </form>
           </div>

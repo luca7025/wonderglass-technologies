@@ -13,3 +13,72 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Splash (src/components/ui/Splash.tsx) */
+.splash-mullions {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+  background-size: 25% 100%;
+}
+
+.splash-sheen {
+  position: absolute;
+  inset: -50% auto -50% 0;
+  width: 35%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.9) 50%, transparent 100%);
+  transform: translateX(-150%) skewX(-18deg);
+  animation: splash-sheen 1400ms cubic-bezier(0.65, 0, 0.35, 1) 700ms forwards;
+}
+
+.splash-rise {
+  opacity: 0;
+  animation: splash-rise 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms forwards;
+}
+
+.splash-tagline {
+  margin-top: 18px;
+  font-size: clamp(9px, 1.6vw, 11px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555555;
+  opacity: 0;
+  letter-spacing: 0.1em;
+  animation: splash-tagline 1000ms cubic-bezier(0.22, 1, 0.36, 1) 400ms forwards;
+}
+
+.splash-track {
+  margin-top: 22px;
+  width: clamp(120px, 20vw, 180px);
+  height: 1px;
+  background: rgba(17, 17, 17, 0.12);
+  overflow: hidden;
+}
+
+.splash-progress {
+  height: 100%;
+  background: #111111;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: splash-progress 1500ms cubic-bezier(0.65, 0, 0.35, 1) 700ms forwards;
+}
+
+@keyframes splash-sheen {
+  to { transform: translateX(400%) skewX(-18deg); }
+}
+@keyframes splash-rise {
+  from { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes splash-tagline {
+  to { opacity: 1; letter-spacing: 0.32em; }
+}
+@keyframes splash-progress {
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-sheen { display: none; }
+  .splash-rise, .splash-tagline { animation: none; opacity: 1; }
+  .splash-progress { animation: none; transform: scaleX(1); }
+}

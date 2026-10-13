@@ -20,7 +20,7 @@ const ChatBot = lazy(() =>
 export function App() {
   return (
     <>
-      <Splash text="WONDERGLASS" />
+      <Splash />
       <ReactLenis root>
         <div className="min-h-screen bg-[#ffffff] text-[#111111] selection:bg-[#111111] selection:text-[#ffffff]">
           <Navbar />
